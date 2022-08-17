@@ -7,27 +7,33 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class InputComponent implements OnInit {
 
-
+  inputValue: string = "";
   @Input() text!: string;
-  @Output() btnClick = new EventEmitter();
+  @Output() click = new EventEmitter<boolean>();
 
   title: string = "Check if Palindrome";
   constructor() { }
 
   ngOnInit(): void {
   }
-  checkIfPalindrome(){
-    console.log('hello');
+
+  changeEvent(event: any){
+    this.inputValue = event.target.value;
+  }
+
+
+  checkIfPalindrome(inputValue: string){ Boolean
+
+    const cleanedInput = inputValue.replace(/[_\W0-9]/g, '').toLowerCase()
+
+    const reversedInput = cleanedInput
+    .split('')
+    .reverse()
+    .join('') 
     
-    // const cleanedInput = input.replace(/[_\W]+/g, '').toLowerCase()
+    return reversedInput === cleanedInput
 
-    // const reversedInput = cleanedInput
-    // .split('')
-    // .reverse()
-    // .join('')
-
-    // return reversedInput === cleanedInput
-
+  
   }
 
 }

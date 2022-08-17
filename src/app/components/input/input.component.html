@@ -2,9 +2,10 @@
     <div class="form-control">
         <label>Please type something into the text box to check if it is a Palindrome <br></label>
         <label for="text">Input: </label>
-        <input type="text" name="text" id="text" placeholder="Input something here"/> <br>
-        <button (btnClick)="checkIfPalindrome()">
+        <input type="text" (change)="changeEvent($event)" placeholder="Input something here"/> <br>
+        <button type ="button" (click)="checkIfPalindrome(inputValue)">
             {{title}}
-        </button>
+        </button><br>
+        <div>{{checkIfPalindrome(inputValue)}}</div>
     </div>
 </form>
