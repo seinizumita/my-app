@@ -9,7 +9,6 @@ export class InputComponent implements OnInit {
 
   inputValue: string = "";
   @Input() text!: string;
-  @Output() click = new EventEmitter<boolean>();
 
   title: string = "Check if Palindrome";
   constructor() { }
@@ -32,8 +31,6 @@ export class InputComponent implements OnInit {
     .join('') 
     
     return reversedInput === cleanedInput
-
-  
   }
 
 }
